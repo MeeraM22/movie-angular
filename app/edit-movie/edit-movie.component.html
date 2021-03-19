@@ -1,0 +1,90 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+    <a class="navbar-brand" [routerLink]="['/view-movies']">Movie Cruiser <i class="fa fa-film" style="font-size:24px"></i> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation" style="color: white;" value="F">
+      <span class="navbar-toggler-icon" style="color: white;"></span>
+    </button>
+    <div class="collapse navbar-collapse my" id="navbarNav" style="margin-left: 700px;">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/customer']">View Movies <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/favorites']">View Favorites <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">{{username}}  </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"><i class='fas fa-user-circle' style='font-size:24px; color: white;'></i> </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/login']" (click) = "logOut()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+      
+    <form method="post">
+    
+      <div class="row">
+          <h2>Edit Movie</h2>
+        </div>
+        <div class="row">
+          <label class="form-control-label">Title</label> <input
+            class="form-control" type="text" name="title" id="title" [(ngModel)] = 'result.title'>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label class="form-control-label">Box Office</label> <input
+              type="number" class="form-control" name=boxOffice id="boxOffice" [(ngModel)] = 'result.boxOffice'>
+          </div>
+          <div class="col">
+            <label class="form-control-label">Active</label> <br>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="active"
+                id="active" value="Yes"> <label
+                class="form-check-label" for="inlineRadio1">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="active"
+                id="active" value="No"> <label
+                class="form-check-label" for="inlineRadio2">No</label>
+            </div>
+          </div>
+          <div class="col">
+            <label class="form-control-label">Genre</label> 
+            <select class="form-control" [(ngModel)] = 'result.genre' name="genre" id="genre">
+              <option value="Science fiction">Sci-fi</option>
+              <option value="Superhero">Superhero</option>
+              <option value="Romance">Drama</option>
+            </select>
+          </div>
+          <div class="col">
+            <label class="form-control-label">Has Teaser</label> <br> <input
+              type="checkbox" value="Yes" name="teaser" class="form-check-inline">Yes
+            <input type="checkbox" value="No" name="teaser"
+              class="form-check-inline">No
+              <br>
+              <br>     
+          </div>
+         
+        </div>
+        <div class="row">
+           
+            <input class="btn btn-success" style="color: white;" value="Submit" type="submit" (click) = "editHandler()">
+          </div>
+      </form>
+  
+    </div>
+    
+    <div class="footer">
+    
+      <footer>
+    
+        <p>Copyright &#169;</p>
+    
+      </footer>
+    
+    </div>

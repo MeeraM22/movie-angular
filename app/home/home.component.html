@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+    crossorigin="anonymous">
+<title>Movie Cruiser</title>
+</head>
+ 
+<body>
+    <nav class="px-5 py-3 mb-5 mb-5  navbar navbar-expand-md navbar-light bg-dark">
+        <div class="container-fluid">
+           <a class="navbar-brand h1 text-white" href="angular">Movie
+               Cruiser <i class='fas fa-film' style='font-size: 36px'></i>
+           </a>
+           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+               data-bs-target="#navBarCollapse">
+               <span class="navbar-toggler-icon"></span>
+           </button>
+           <div  class="collapse navbar-collapse" id="navBarCollapse">
+           <ul  class="navbar-nav">
+           <li class="nav-item"><a class="nav-link text-white" href="angular">Movies</a></li>
+           <li class="nav-item"><a class="nav-link text-white" href="login">Login</a>
+           <li class="nav-item"><a class="nav-link text-white" href="signup">Signup</a>
+           </li></ul>
+           </div>
+           </div>
+       </nav>
+  <div class="container">
+                <h1 class="text-center" >Movies</h1>
+                <table class="table table-striped table-hover border-dark">      
+                    <thead>
+          <tr class="bg-primary border-dark text-white">
+                        <th>Id</th>
+                        <th >Title</th>
+                        <th>Box Office</th>
+                        <th>Active</th>
+                        <th> Date of Launch</th>
+                        <th>Genre</th>
+                        <th>Teaser</th>
+                    </tr>
+          </thead>
+            <tbody>
+                    <tr *ngFor="let movie of movies">
+                            <td>{{movie.id}}</td>
+                            <td>{{movie.title}}</td>
+                            <td>{{movie.boxoffice}}</td>
+                            <td>{{movie.active}}</td>
+                            <td>{{movie.date}}</td>
+                            <td>{{movie.genre}}</td>
+                            <td>{{movie.hasTeaser}}</td>
+                        </tr>
+          </tbody>
+                </table>
+      </div>
+      <footer class="px-5 my-5">
+        <p>Copyright &#xa9; 2021</p>
+    </footer>
+    
+</body>
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</html>

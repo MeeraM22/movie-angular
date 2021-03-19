@@ -1,0 +1,67 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  </head>
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <a class="navbar-brand" [routerLink]="['/view-movies']">Movie Cruiser <i class="fa fa-film" style="font-size:24px"></i> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation" style="color: white;" value="F">
+      <span class="navbar-toggler-icon" style="color: white;"></span>
+    </button>
+    <div class="collapse navbar-collapse my" id="navbarNav" style="margin-left: 700px;">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/favorites']">View Movies <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/favorites']">View Favorites <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">{{username}}  </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"><i class='fas fa-user-circle' style='font-size:24px; color: white;'></i> </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/login']" (click) = "logOut()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <h2>Movies</h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Box Office</th>
+        <th>Active</th>
+        <th>Date of Launch</th>
+        <th>Genre</th>
+        <th>Teaser</th>
+        <th>Action</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mov of movies">
+          <td>{{mov.id}}</td>
+          <td>{{mov.title}}</td>
+          <td>{{mov.boxOffice}}</td>
+          <td>{{mov.isActive}}</td>
+          <td>{{mov.date_of_launch | date:'yyyy-MM-dd'}}</td>
+          <td>{{mov.genre}}</td>
+          <td>{{mov.hasTeaser}}</td>
+          <td><a><button class="btn btn-success" (click)="addToFavorites(mov.id)">Add to Favorites</button></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="footer">
+  
+    <footer>
+  
+      <p>Copyright &#169;</p>
+  
+    </footer>
+  
+  </div>

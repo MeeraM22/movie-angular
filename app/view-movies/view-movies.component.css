@@ -1,0 +1,47 @@
+/*@import  '~bootstrap/dist/css/bootstrap.min.css';
+ 
+/* nav li a{
+ 
+    color: #ffffff;
+ 
+} *//*
+ 
+nav a {
+ 
+    color: white;
+ 
+}
+ 
+table{
+ 
+    margin-top: 50px;;
+ 
+}
+ 
+h2{
+ 
+    margin-top: 50px;
+ 
+}
+ 
+.footer{
+ 
+    position: fixed;
+    bottom: 0;
+    background-color: grey;
+    height: 60px;
+    width: 100%;
+ 
+}
+ 
+.footer p {
+ 
+    margin-top: 20px;
+    margin-left: 50px;
+ 
+}
+/*
+.my{
+ 
+    float: right;
+    /* margin-left: 500px;} */
